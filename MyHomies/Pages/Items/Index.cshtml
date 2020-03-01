@@ -1,0 +1,84 @@
+﻿@page
+@model MyHomies.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].quality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].checkOutTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].CheckedOut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].maxTimeOut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].condition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].lateFee)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Item) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.checkOutTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckedOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.maxTimeOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.condition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lateFee)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ItemID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ItemID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ItemID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,76 @@
+﻿@page
+@model MyHomies.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Item</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.category)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.quality)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.quality)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.checkOutTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.checkOutTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.CheckedOut)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.CheckedOut)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.maxTimeOut)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.maxTimeOut)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.condition)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.condition)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.lateFee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.lateFee)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Item.ItemID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
